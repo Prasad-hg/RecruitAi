@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #3f72af;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3f72af;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #2d5a8f;
+        }
+
+        button {
+            background-color: #3f72af;
+            color: #fff;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2d5a8f;
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px;
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-container input:focus, .form-container textarea:focus {
+            border-color: #3f72af;
+            outline: none;
+        }
+
+        .video-container {
+            position: relative;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .video-container img {
+            width: 640px;
+            height: 480px;
+            border-radius: 10px;
+            border: none;
+        }
+        /* Navbar Styles */
+.navbar {
+    background-color: #333; /* Ensure consistent background color */
+    padding: 15px 0;
+    position: fixed; /* Make the navbar fixed to the top */
+    top: 0; /* Position it at the very top */
+    width: 100%; /* Span the full width of the page */
+    z-index: 1000; /* Keep it above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.navbar-logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: #2575fc;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+                <div class="navbar-container">
+                    <a href="{{ url_for('home') }}" class="navbar-logo">Recruit AI</a>
+                    <ul class="navbar-links">
+                        <li><a href="{{ url_for('resume_upload') }}" class="navbar-link">Resume Upload & Job Search</a></li>
+                        <li><a href="{{ url_for('skill_test') }}" class="navbar-link">Skill Test</a></li>
+                        <li><a href="{{ url_for('live_interview') }}" class="navbar-link">Live Interview</a></li>
+                         <li><a href="{{ url_for('logout') }}" class="navbar-link">Logout</a></li>
+                    </ul>
+                </div>
+    </nav>
+    <div class="container">
+        <h1 class="welcome-text">Welcome to the Live Interview Platform</h1>
+        <div class="card">
+            <form method="POST" action="/user_details" class="form-container">
+                <label for="username">Enter Your Name:</label>
+                <input type="text" id="username" name="username" placeholder="Your Name" required>
+                <label for="email">Enter Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <button type="submit">Proceed to Interview</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

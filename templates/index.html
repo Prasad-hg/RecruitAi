@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="homepage">
+    <h1>Welcome to Recruit AI</h1>
+    <p>Choose an option to get started:</p>
+    <div class="buttons">
+        <a href="{{ url_for('resume_upload') }}" class="btn btn-custom">Resume Upload & Job Search</a>
+        <a href="{{ url_for('skill_test') }}" class="btn btn-custom">Take the Test</a>
+        <a href="{{ url_for('live_interview') }}" class="btn btn-custom">Live Interview</a>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f7b7b7, #ff8c00);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: #fff;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+         a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #3f72af; /* Keep the blue background */
+            padding: 10px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        a:hover {
+            background-color: #2d5a8f; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+
+
+        /* Additional Styles for Layout */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            a {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+        /* Navbar Styles */
+.navbar {
+    background-color: #333; /* Ensure consistent background color */
+    padding: 15px 0;
+    position: fixed; /* Make the navbar fixed to the top */
+    top: 0; /* Position it at the very top */
+    width: 100%; /* Span the full width of the page */
+    z-index: 1000; /* Keep it above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.navbar-logo {
+    background-color: transparent;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Navbar Styles */
+.navbar-link {
+    color: #fff; /* White text */
+    text-decoration: none;
+    background-color: transparent; /* Transparent background for navbar links */
+    padding: 10px; /* Optional padding for better spacing */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: #2575fc; /* Hover effect for navbar links */
+    background-color: #444; /* Add background color on hover */
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+            <div class="navbar-container">
+                <a href="{{ url_for('home') }}" class="navbar-logo">Recruit AI</a>
+                <ul class="navbar-links">
+                    <li><a href="{{ url_for('resume_upload') }}" class="navbar-link">Resume Upload & Job Search</a></li>
+                    <li><a href="{{ url_for('skill_test') }}" class="navbar-link">Skill Test</a></li>
+                    <li><a href="{{ url_for('live_interview') }}" class="navbar-link">Live Interview</a></li>
+                     <li><a href="{{ url_for('logout') }}" class="navbar-link">Logout</a></li>
+                </ul>
+            </div>
+    </nav>
+    <div class="container">
+        <h2>Thank you for attending the interview, {{ username }}!</h2>
+        <p>We will reach out to you shortly. We appreciate your time and participation.</p>
+        <p>Good luck with the next steps!</p>
+        <a href="/live_interview">Return to Home</a>
+    </div>
+</body>
+</html>
