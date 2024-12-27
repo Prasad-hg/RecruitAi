@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Handle form submission for resume upload
+
     const uploadForm = document.getElementById('uploadForm');
     const loadingDiv = document.getElementById('loading');
 
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const formData = new FormData(this);
 
-            // Ensure the loading div exists before trying to modify its style
+
             if (loadingDiv) {
                 loadingDiv.style.display = 'block';
             }
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const role = document.getElementById('role').value;
             const location = document.getElementById('location').value;
 
-            // Debugging: Check the values of role and location
+
             console.log(`Role: ${role}, Location: ${location}`);
 
             // Call the API to get job recommendations based on role and location
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 const jobListDiv = document.getElementById('job-list');
                 if (jobListDiv) {
-                    jobListDiv.innerHTML = '';  // Clear previous job listings
+                    jobListDiv.innerHTML = '';
 
                     if (data.jobs && data.jobs.length > 0) {
                         data.jobs.forEach(job => {
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //online test platform...
 
 
-let userId = null; // To store the registered user's ID
+let userId = null;
 let cheatAttempts = 0;
 
 // Handle User Registration
@@ -131,7 +131,7 @@ document.getElementById('user-info-form').addEventListener('submit', (e) => {
             return response.json();
         })
         .then(data => {
-            userId = data.user_id; // Save the user ID for future requests
+            userId = data.user_id;
             alert('Registration successful! Proceed to select test settings.');
             document.getElementById('user-info-form').style.display = 'none';
             document.getElementById('test-settings-form').style.display = 'block';
@@ -162,7 +162,7 @@ document.getElementById('test-settings-form').addEventListener('submit', (e) => 
                 displayQuestions(data.questions);
                 document.getElementById('test-settings-form').style.display = 'none';
                 document.getElementById('test-container').style.display = 'block';
-                startTimer(10); // Start a 10-minute timer
+                startTimer(05);
                 monitorCheating();
             } else {
                 alert('No questions available for the selected difficulty.');

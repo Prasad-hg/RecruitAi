@@ -111,6 +111,7 @@ def fetch_questions(difficulty):
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT id, question_text, options FROM questions WHERE difficulty = %s", (difficulty,))
     questions = cursor.fetchall()
+    # print("Fetched Questions:", questions)
     cursor.close()
     conn.close()
     return questions

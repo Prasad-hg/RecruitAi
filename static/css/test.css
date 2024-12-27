@@ -17,6 +17,25 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+
+#test-container {
+    display: none;
+    width: 130%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 750px;
+    margin-bottom:-20px;
+
+}
+
+#timer {
+margin-left: 450px;
+color:blue;
+position:fixed;
+}
+
 h1 {
     text-align: center;
     color: #333;
@@ -45,13 +64,13 @@ button:hover {
 }
 /* Navbar Styles */
 .navbar {
-    background-color: #333; /* Ensure consistent background color */
+    background-color: #333;
     padding: 15px 0;
-    position: fixed; /* Make the navbar fixed to the top */
-    top: 0; /* Position it at the very top */
-    width: 100%; /* Span the full width of the page */
-    z-index: 1000; /* Keep it above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
